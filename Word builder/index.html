@@ -9,28 +9,30 @@
 
 
 
-<!-- wordBuilder("Moon") // -> ["M", "Mo", "Moo", "Moon"] -->
+
 
   <script>
-    var newArray=[];
+
 
     function wordBuilder(wordToSpell){
-debugger
+var newArray=[];
         for(var i=0;i<wordToSpell.length;i++){
           var letters=" ";
            for(var j=0;j<=i;j++){
             letters+=wordToSpell[j]
 
            }
-            newArray.push(letters);
+          newArray.push(letters);
       }
 
           return newArray;
     }
 
-
-
     console.log(wordBuilder("Moon"));
-  </script>
+    console.log(wordBuilder("Stars"));
+    console.log(wordBuilder("JavaScript"));
+
+
+</script>
 </body>
 </html>
