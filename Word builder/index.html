@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Builder</title>
+</head>
+<body>
+
+
+
+<!-- wordBuilder("Moon") // -> ["M", "Mo", "Moo", "Moon"] -->
+
+  <script>
+    var newArray=[];
+
+    function wordBuilder(wordToSpell){
+debugger
+        for(var i=0;i<wordToSpell.length;i++){
+          var letters=" ";
+           for(var j=0;j<=i;j++){
+            letters+=wordToSpell[j]
+
+           }
+            newArray.push(letters);
+      }
+
+          return newArray;
+    }
+
+
+
+    console.log(wordBuilder("Moon"));
+  </script>
+</body>
+</html>
