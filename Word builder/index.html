@@ -12,21 +12,20 @@
 
 
   <script>
+      function wordBuilder(wordToSpell){
 
-
-    function wordBuilder(wordToSpell){
         var newArray=[];
-        for(var i=0;i<wordToSpell.length;i++){
-          var letters=" ";
-           for(var j=0;j<=i;j++){
-            letters+=wordToSpell[j]
+        for (var i=0;i<wordToSpell.length;i++){
+          var letters="";
+          for(var j=0;j<=i;j++){
+          letters=letters+wordToSpell[j];
 
-           }
+          }
           newArray.push(letters);
+        }
+        return newArray;
       }
 
-          return newArray;
-    }
 
     console.log(wordBuilder("Moon"));
     console.log(wordBuilder("Stars"));
