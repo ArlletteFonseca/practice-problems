@@ -9,15 +9,20 @@
 
 
   <script>
-    function accountNumberProtector(cardNumberString){
-      var cardArray="";
-     
-      cardArray=cardNumberString.slice(0,12);
+   function accountNumberProtector(cardNumberString) {
+      var cardArray = ["*", "*"];
 
+      for (var i = 12; i < cardNumberString.length; i++) {
 
-console.log(cardArray);
+        cardArray.push(cardNumberString[i]);
 
       }
+
+      return cardArray.join("");
+
+    }
+
+
 
 
 
