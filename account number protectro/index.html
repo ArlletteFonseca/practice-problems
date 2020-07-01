@@ -10,16 +10,18 @@
 
   <script>
     function accountNumberProtector(cardNumberString){
-      var cardArray=["*","*"];
+      var cardArray="";
+     
+      cardArray=cardNumberString.slice(0,12);
 
-      for (var i=13;i<cardNumberString.length;i++){
-         cardArray.push(cardNumberString[i]);
+
+console.log(cardArray);
 
       }
 
-        return cardArray.join("");
 
-    }
+
+
 
     console.log("5543223485638832:",accountNumberProtector("5543223485638832"));
     console.log("8934235477210943:",accountNumberProtector("8934235477210943"));
