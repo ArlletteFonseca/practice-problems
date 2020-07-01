@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Number Protector</title>
+</head>
+<body>
+
+
+  <script>
+    function accountNumberProtector(cardNumberString){
+      var cardArray=["*","*"];
+
+      for (var i=13;i<cardNumberString.length;i++){
+         cardArray.push(cardNumberString[i]);
+
+      }
+
+        return cardArray.join("");
+
+    }
+
+    console.log("5543223485638832:",accountNumberProtector("5543223485638832"));
+    console.log("8934235477210943:",accountNumberProtector("8934235477210943"));
+    console.log("7513635499320192:",accountNumberProtector("7513635499320192"));
+  // -> "**8832"
+     // -> "**0943"
+     // -> "**0192"
+  </script>
+
+</body>
+</html>
