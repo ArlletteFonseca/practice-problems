@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Minutes To Seconds</title>
+</head>
+<body>
+
+
+  <script>
+    function convertMinutesToSeconds(timeToConvert){
+        var calc=0;
+        var seconds= 0;
+        for (var i=0;i<timeToConvert.length;i++){
+         var array=timeToConvert.split(":");
+          calc=parseInt((array[0]*60));
+          seconds=parseInt(array[1]);
+
+        }
+        return calc+seconds;
+    }
+
+        console.log("15:34 to seconds:",convertMinutesToSeconds("15:34"));
+        console.log("02:45 to seconds:",convertMinutesToSeconds("02:45"));
+        console.log("08:21 to seconds:",convertMinutesToSeconds("08:21"));
+
+
+
+  </script>
+
+</body>
+</html>
