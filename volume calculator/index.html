@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Calculator
+
+  </title>
+</head>
+<body>
+
+
+
+  <script>
+    function volumeCalculator(boxesArray){
+    var firstTotal=1;
+    var secondTotal=1;
+    var thirdTotal=1;
+    var first=boxesArray[0];
+    var second=boxesArray[1];
+    var third=boxesArray[2];
+    for(var i=0;i<boxesArray.length;i++){
+      firstTotal*=first[i];
+      secondTotal*=second[i];
+      thirdTotal*=third[i];
+
+
+
+    }
+      return firstTotal+secondTotal+thirdTotal;
+     }
+
+
+console.log( volumeCalculator([[3, 3, 3], [4, 4, 4], [5, 5, 5]]));
+console.log( volumeCalculator([[5, 1, 4], [8, 5, 4], [3, 1, 7]]));
+console.log(volumeCalculator([[5, 4, 2], [12, 15, 21], [7, 7, 7]]));
+ 
+  </script>
+</body>
+</html>
