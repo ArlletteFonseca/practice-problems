@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is greater than One</title>
+</head>
+<body>
+
+
+
+
+  <script>
+    function isGreaterThanOne(fraction){
+     var split=fraction.split("/");
+    var decimal=split[0]/split[1];
+      if(decimal>1){
+        return true;
+      }else{
+         return false;
+      }
+
+    }
+      console.log("7/5:",isGreaterThanOne("7/5"));
+      console.log("3/4:",isGreaterThanOne("3/4"));
+      console.log("13/11:",isGreaterThanOne("13/11"));
+
+
+  </script>
+</body>
+</html>
