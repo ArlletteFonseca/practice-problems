@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Team Names</title>
+  </head>
+  <body>
+    <script>
+
+        function createTeamName(namesArray){
+            var first=" ";
+        for (var i=0;i<namesArray.length;i++){
+          var sort=namesArray.sort();
+
+          var  name=sort[i];
+          
+            first+=name[0]
+        }
+          return first;
+        }
+        console.log(createTeamName(["John", "Mark", "Simon"]));
+        console.log( createTeamName(["Paul", "Duncan", "Leto", "Jessica"]));
+        console.log(createTeamName(["Luke", "Anakin", "Leia", "Rey"]));
+
+    </script>
+  </body>
+</html>
