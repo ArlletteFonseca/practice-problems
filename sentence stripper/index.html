@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentence Stripper</title>
+</head>
+<body>
+
+
+
+  <script>
+    function sentenceStripper(sentence,charsToStrip){
+      var string="";
+      for(var i=0;i<charsToStrip.length;i++){
+        for(var j=0; j<sentence.length;j++){
+          if(charsToStrip[i]===sentence.charAt(j)){
+            string=string.slice(0,j);
+
+          }
+        }
+        console.log(string);
+
+    }
+
+    }
+
+
+
+      sentenceStripper("a test sentence", "ebcf") // -> "a tst sntn"
+        // sentenceStripper("how are you?", "afdi") // -> "how re you?"
+        // sentenceStripper("css is awesome!", "cam") // -> "ss is awesoe!"
+
+  </script>
+</body>
+</html>
