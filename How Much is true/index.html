@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Is True</title>
+</head>
+<body>
+
+
+  <script>
+    function countTrue(arr){
+      var iLength=[];
+        for (var i=0;i<arr.length;i++){
+          if (arr[i]===true){
+            iLength.push(i);
+          }
+
+        }
+        return iLength.length;
+    }
+      console.log("true, false, false, true, false:",countTrue([true, false, false, true, false])) //2
+      console.log("false, false, false, false:",countTrue([false, false, false, false]));
+      console.log("[]", countTrue([]));
+
+
+
+
+  </script>
+</body>
+</html>
