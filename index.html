@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Reverser</title>
+</head>
+<body>
+  <script>
+    function caseReverser(stringOfWords){
+          var myString="";
+        for(var i=0;i<stringOfWords.length;i++){
+          if(stringOfWords[i]===stringOfWords[i].toUpperCase()){
+            myString+=stringOfWords[i].toLowerCase();
+          }if(stringOfWords[i]===stringOfWords[i].toLowerCase()){
+            myString+=stringOfWords[i].toUpperCase();
+          }
+
+        }
+          return myString;
+    }
+    console.log("This is A TesT:",caseReverser("This is A TesT"));
+    console.log("A Moment In Time:",caseReverser("A Moment In Time"));
+    console.log("The EnD of tHe BeginnIng:",caseReverser("The EnD of tHe BeginnIng"));
+
+  </script>
+</body>
+</html>
