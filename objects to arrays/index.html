@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converting Objects to Arrays</title>
+</head>
+<body>
+
+
+
+  <script>
+      function toArray(obj) {
+          var key=[];
+
+          for(var index in obj){
+            key.push(index);
+            key.push(obj[index]);
+
+          }
+          var newArr=[];
+          for (var i=0;i<key.length;i+=2){
+              newArr.push([key[i],key[i+1]]);
+          }
+
+
+
+          return newArr;
+
+
+        }
+            console.log("{ a: 1, b: 2 }:",toArray({ a: 1, b: 2 }));
+            console.log("{ foo:33, bar:45, baz:67 }:",toArray({ shrimp: 15, tots: 12,baz:67 }));
+            console.log("{}:",toArray({}) );
+
+
+  </script>
+</body>
+</html>
