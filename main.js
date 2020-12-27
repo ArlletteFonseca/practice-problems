@@ -1,18 +1,19 @@
 
-function getCount(str) {
-  let vowelsCount = 0;
-  const vowels = ["a", "e", "i", "o", "u"];
-
-  for(let i = 0; i <= str.length - 1; i++) {
-    for(let j = 0; j<vowels.length -1; j++) {
-      if(str[i] === vowels[j]) {
-        vowelsCount++
-      }
+var defangIPaddr = function (address) {
+  const separated = address.split('')
+  for(let i = 0; i <= separated.length - 1; i++) {
+    if(separated[i] === '.') {
+      separated[i] = '[.]';
     }
   }
-  return vowelsCount;
-}
 
-getCount("abracadabra");
-getCount("Hello World");
+  return separated.join('');
+};
+
+
+defangIPaddr("1.1.1.1");
+//Output: "1[.]1[.]1[.]1"
+
+defangIPaddr("255.100.50.0");
+//Output: "255[.]100[.]50[.]0"
 
