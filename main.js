@@ -22,4 +22,3 @@ changeEnough([30, 40, 20, 5], 12.55) //➞ true
 changeEnough([10, 0, 0, 50], 3.85) //➞ false
 changeEnough([1, 0, 5, 219], 19.99) //➞ false
 
-
