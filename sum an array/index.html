@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Array</title>
+</head>
+<body>
+
+
+
+  <script>
+    function sumArray(numbersArray){
+     var sum=0;
+     for (var i=0;i<numbersArray.length;i++){
+       sum=sum+numbersArray[i];
+     }
+     return sum;
+    }
+
+
+    console.log(sumArray([10, 5, 3, 7, 2])) ;
+    console.log(sumArray([1, 2, 3, 4, 5]));
+    console.log(sumArray([5, 3, 7, 4]));
+  </script>
+</body>
+</html>
+
+
+  <!-- return numbersArray.reduce(function(a,b){
+  return a+b;
+  },0); -->
