@@ -1,19 +1,17 @@
 
-var defangIPaddr = function (address) {
-  const separated = address.split('')
-  for(let i = 0; i <= separated.length - 1; i++) {
-    if(separated[i] === '.') {
-      separated[i] = '[.]';
-    }
+var arrayStringsAreEqual = function (word1, word2) {
+  const one = word1.join('');
+  const two = word2.join('');
+  if (one === two) {
+    console.log(true)
+    return true;
+  } else {
+    console.log(false);
+    return false;
   }
-
-  return separated.join('');
 };
 
-
-defangIPaddr("1.1.1.1");
-//Output: "1[.]1[.]1[.]1"
-
-defangIPaddr("255.100.50.0");
-//Output: "255[.]100[.]50[.]0"
+arrayStringsAreEqual(["ab", "c"],["a", "bc"])
+arrayStringsAreEqual(["a", "cb"], ["ab", "c"])
+arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"])
 
