@@ -1,3 +1,4 @@
+
 var arrayStringsAreEqual = function (word1, word2) {
   const one = word1.join('');
   const two = word2.join('');
@@ -13,3 +14,4 @@ var arrayStringsAreEqual = function (word1, word2) {
 arrayStringsAreEqual(["ab", "c"],["a", "bc"])
 arrayStringsAreEqual(["a", "cb"], ["ab", "c"])
 arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"])
+
