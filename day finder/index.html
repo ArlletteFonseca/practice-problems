@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day Finder</title>
+</head>
+<body>
+<script>
+
+    function dayFinder(stringDate){
+      var d=new Date(stringDate);
+      var dayNum=d.getDay();
+
+      switch(dayNum){
+        case 0:
+          return "Sunday";
+
+        case 1:
+          return "Monday";
+
+        case 2:
+         return "Tuesday";
+
+        case 3:
+         return "Wednesday";
+
+        case 4:
+          return "Thursday";
+
+        case 5:
+         return "Friday";
+
+        case 6:
+         return "Saturday";
+
+      }
+
+    }
+
+    console.log(dayFinder("05/22/1946"));
+    console.log(dayFinder("01/20/2001"));
+    console.log(dayFinder("03/15/1988"));
+
+
+
+
+
+</script>
+</body>
+</html>
