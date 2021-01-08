@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is String in Order</title>
+</head>
+<body>
+<script>
+  function isStringInOrder(string){
+
+        var arr=[];
+        for(var i=0;i<string.length;i++){
+          arr.push(string[i]);
+        }
+        var sorting=arr.sort().join("");
+
+        if(string===sorting){
+          return true;
+        }else{
+          return false;
+        }
+        }
+
+        console.log("abcde:",isStringInOrder("abcde"));
+        console.log("1357:",isStringInOrder("1357"));
+        console.log("water:",isStringInOrder("water"));
+
+
+
+
+
+</script>
+</body>
+</html>
