@@ -1,24 +1,21 @@
 
-function changeEnough(change, amountDue) {
-  let total = 0;
-  const quarters = change[0] * .25;
-  const dimes = change[1] * .10;
-  const nickels = change[2] * .05;
-  const pennies = change[3] * .01;
+function createPhoneNumber(numbers) {
+  let area = "";
+  let three = "";
+  let four = "";
 
-  total = quarters+dimes+nickels+pennies;
-
-  if(total >= amountDue) {
-    return true;
-  } else {
-     return false;
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    if (i<= 2) {
+      area += numbers[i];
+    } else if (i >=3 && i <= 5) {
+      three += numbers[i];
+    } else  {
+      four += numbers[i];
+    }
   }
+  console.log('(' + area + ')' + ' ' + three + '-' + four)
+  return '('+area+')' +' ' +three+'-'+four
 
 }
-
-changeEnough([2, 100, 0, 0], 14.11) //➞ false
-changeEnough([0, 0, 20, 5], 0.75) //➞ true
-changeEnough([30, 40, 20, 5], 12.55) //➞ true
-changeEnough([10, 0, 0, 50], 3.85) //➞ false
-changeEnough([1, 0, 5, 219], 19.99) //➞ false
-
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+// => returns "(123) 456-7890"
