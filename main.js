@@ -1,21 +1,24 @@
 
-function createPhoneNumber(numbers) {
-  let area = "";
-  let three = "";
-  let four = "";
+function isIsogram(str) {
+   let fal='';
 
-  for (let i = 0; i <= numbers.length - 1; i++) {
-    if (i<= 2) {
-      area += numbers[i];
-    } else if (i >=3 && i <= 5) {
-      three += numbers[i];
-    } else  {
-      four += numbers[i];
+const newStr = str.toLowerCase();
+
+for (let i = 0; i < newStr.length; i ++) {
+  for (let  j = i + 1; j < newStr.length; ++j) {
+    if(newStr[i] === newStr[j]) {
+      fal = false;
     }
   }
-  console.log('(' + area + ')' + ' ' + three + '-' + four)
-  return '('+area+')' +' ' +three+'-'+four
+  }
+
+  if(fal.length === 0) {
+   return true;
+  } else {
+    return false;
+  }
 
 }
-createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
-// => returns "(123) 456-7890"
+isIsogram("Dermatoglyphics") //== true
+isIsogram("aba") //== false
+isIsogram ("moOse") //== false -- ignore letter case
