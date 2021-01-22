@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consistent String</title>
+</head>
+<body>
+  <script >
+    var countConsistentStrings = function (allowed, words) {
+      let count = 0;
+      let splitA = allowed.split('');
+
+        for (let x = 0; x <= splitA.length - 1; x++) {
+         const finding = words.find( a => a.indexOf(splitA[x]) !== -1)
+          console.log(finding);
+
+        }
+      }
+
+     countConsistentStrings("ab",["ad", "bd", "aaab", "baa", "badab"])
+     //countConsistentStrings("abc", ["a", "b", "c", "ab", "ac", "bc", "abc"])
+
+
+  </script>
+</body>
+</html>
