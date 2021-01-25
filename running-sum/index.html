@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Sum</title>
+</head>
+<body>
+  <script>
+    var runningSum = function(nums) {
+      const arr = [];
+      nums.reduce((a,b,i) =>  arr[i] = a+b ,0);
+      return arr;
+    }
+    runningSum([1, 2, 3, 4]);
+  </script>
+</body>
+</html>

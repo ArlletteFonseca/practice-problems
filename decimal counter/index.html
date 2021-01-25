@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decimal Counter</title>
+</head>
+<body>
+
+
+
+
+
+  <script>
+
+    function decimalPlaceCounter(stringNumber){
+      var numberCount=1;
+        for (var i=0;i < stringNumber.length;i++){
+          if (stringNumber[i]=== "."){
+             var myString=stringNumber.length-[i];
+             var count=myString-numberCount;
+             return count;
+          }else if(stringNumber[i]===undefined){
+
+          }
+
+          }
+
+            return "0";
+        }
+
+
+
+    console.log("127.245:",decimalPlaceCounter("127.245"));
+    console.log("145:",decimalPlaceCounter("145"));
+    console.log("23.00:",decimalPlaceCounter("23.00"))
+
+  </script>
+</body>
+</html>

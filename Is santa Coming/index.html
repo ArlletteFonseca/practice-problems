@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Santa Coming</title>
+</head>
+<body>
+
+
+
+
+  <script>
+    function isSantaComing(dateObject){
+
+            var month=dateObject.getMonth();
+            var date=dateObject.getDate();
+
+            if(month===11 && date=== 24){
+              return true;
+            }else{
+              return false;
+            }
+      }
+
+
+      console.log("2001, 11, 24:",isSantaComing(new Date(2001, 11, 24)));
+      console.log("2018, 7, 4:",isSantaComing(new Date(2018, 7, 4)));
+      console.log("1995, 11, 23, 23, 59, 59:",isSantaComing(new Date(1995, 11, 23, 23, 59, 59)));
+
+
+
+  </script>
+</body>
+</html>
