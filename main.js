@@ -1,24 +1,15 @@
 
-function isIsogram(str) {
-   let fal='';
-
-const newStr = str.toLowerCase();
-
-for (let i = 0; i < newStr.length; i ++) {
-  for (let  j = i + 1; j < newStr.length; ++j) {
-    if(newStr[i] === newStr[j]) {
-      fal = false;
+function arrayDiff(a, b) {
+ const arr =[];
+  for(let i = 0; i <= a.length - 1; i++) {
+    if(a[i] !== Number(b)) {
+      arr.push(a[i]);
     }
   }
-  }
-
-  if(fal.length === 0) {
-   return true;
-  } else {
-    return false;
-  }
-
+  return arr;
 }
-isIsogram("Dermatoglyphics") //== true
-isIsogram("aba") //== false
-isIsogram ("moOse") //== false -- ignore letter case
+arrayDiff([1, 2], [1])//  == [2]
+
+arrayDiff([1, 2, 2, 2, 3], [2]) //== [1, 3]
+
+
