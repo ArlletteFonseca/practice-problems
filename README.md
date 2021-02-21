@@ -1,2 +1,2 @@
-# practice-problems
+# Algorithms
 a repo for practice problems
