@@ -1,2 +1,2 @@
-# practice-problems
-a repo for practice problems
+# practice problems
+A repo to study algorithms using practice problems from LeetCode, Codewars, and Edabit.
