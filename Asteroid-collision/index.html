@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    debugger;
+    function asteroidCollision(asteroids) {
+      const newArr=[];
+      const last_element=newArr[newArr.length-1];
+      for (let i = 0; i <= asteroids.length - 1; i++) {
+        const asteroid = asteroids[i];
+console.log(asteroid)
+          //no collision
+        if(!newArr.length || last_element < 0 || asteroid > 0) {
+          newArr.push(asteroid);
+          //collision below
+        } else if(last_element <= asteroid * -1) {
+          if(last_element < asteroid * -1)
+          i--;
+          newArr.pop();
+        }
+      }
+console.log(newArr)
+    }
+    asteroidCollision([10,2,-5])
+  </script>
+</body>
+</html>
