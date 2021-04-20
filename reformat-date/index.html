@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function reformatDate(date) {
+
+      const month ={
+        Jan:'01',
+        Feb:'02',
+        Mar:'03',
+        Apr:'04',
+        May:'05',
+        Jun:'06',
+        Jul:'07',
+        Aug:'08',
+        Sep:'09',
+        Oct:'10',
+        Nov:'11',
+        Dec:'12'
+      }
+
+      let newDate = [];
+
+      const dateArr = date.split(' ');
+
+
+    for (let i =0; i <=dateArr.length - 1; i++) {
+      for (let key in month) {
+       if(dateArr[i] === key) {
+        newDate.push(month[key]+ '-')
+       }
+      }
+
+      if(dateArr[i] >= 1900) {
+          newDate.push(dateArr[i] + '-')
+      } else if(dateArr[i].indexOf('nd') !== -1 || dateArr[i].indexOf('st') !== -1 || dateArr[i].indexOf('rd') !== -1 ||dateArr[i].indexOf('th') !== -1) {
+
+           const newDay = dateArr[i].slice(0,-2);
+           if(newDay.length === 1){
+             newDate.push('0' + newDay);
+           } else {
+             newDate.push(newDay);
+           }
+        }
+      }
+      console.log(newDate.reverse().join(''))
+      return newDate.reverse().join('')
+
+    }
+    reformatDate("22nd Apr 2023")
+
+  </script>
+</body>
+</html>
