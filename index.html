@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum of Found Indexes</title>
+</head>
+<body>
+  <!-- Create a function which takes in an array of numbers and a number to find. Return the sum of every index in the array
+  which matches the chosen number. -->
+    <script>
+      function sumFoundIndexes(arr,n){
+
+        var sum=0;
+          for (var index in arr){
+            if(arr[index]===n){
+             var numbers= parseInt(index);
+              sum+=numbers;
+            }
+          }
+            return sum;
+
+      }
+        console.log("[1, 2, 3, 4, 5, 6]:", sumFoundIndexes([1, 2, 3, 4, 5, 6], 3));
+        console.log("[100, 100, 100, 100, 100]:", sumFoundIndexes([100, 100, 100, 100, 100], 100));
+        console.log("[5, 10, 15, 20]:",  sumFoundIndexes([5, 10, 15, 20], 2));
+
+
+
+    </script>
+</body>
+</html>
