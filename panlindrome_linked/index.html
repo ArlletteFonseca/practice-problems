@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var isPalindrome = function (head) {
+        let arr =[]
+        for (let j = head.length - 1; j>= 0; j--){
+          arr.push(head[j])
+
+        }
+        console.log('arr', arr)
+        console.log(head)
+        for (let i = 0; i <= head.length - 1; i++) {
+          if(head[i] !== arr[i]) {
+            console.log(head[i])
+            console.log(arr[i])
+          } else {
+            console.log(true);
+          }
+
+        }
+
+      }
+      isPalindrome([1,2])
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fog Clearer</title>
+
+</head>
+<body>
+
+
+
+
+
+
+  <script>
+    function fogClearer(stringToClear){
+        var myString="";
+
+        for (var i=0;i<stringToClear.length;i++){
+
+          if(stringToClear[i] !== "f" && stringToClear[i] !== "o" && stringToClear[i] !== "g" &&stringToClear.indexOf("f")>-1){
+             myString+=stringToClear[i];
+          }else if (stringToClear.indexOf("f")===-1){
+            return "It's a clear day!";
+          }
+
+        }
+
+
+
+          return myString;
+
+
+
+
+    }
+
+
+      console.log("fffdarkooooooggggggg:",fogClearer("fffdarkooooooggggggg"));
+      console.log("I like nice trees:",fogClearer("I like nice trees"));
+      console.log("foogooooffffhuhooofff:",fogClearer("foogooooffffhuhooofff"));
+
+  </script>
+</body>
+</html>

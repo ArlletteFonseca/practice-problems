@@ -1,0 +1,23 @@
+{
+  "name": "practice-problems",
+  "version": "1.0.0",
+  "description": "A repo to study algorithms using practice problems from LeetCode, Codewars, and Edabit.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArlletteFonseca/practice-problems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArlletteFonseca/practice-problems/issues"
+  },
+  "homepage": "https://github.com/ArlletteFonseca/practice-problems#readme",
+  "devDependencies": {
+    "jest": "^27.0.5"
+  }
+}
