@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   
+      var detectCapitalUse = function (word) {
+
+        while (word.length > 1) {
+          for (let i = 1; i <= word.length - 1; i++) {
+
+            if (word[0] === word[0].toUpperCase() && word[i] === word[i].toUpperCase()) {
+              return true
+            } else if (word[0] === word[0].toLowerCase() && word[i] === word[i].toLowerCase()) {
+              return true
+            } else {
+              return false
+            }
+
+          }
+        }
+
+
+      };
+  </script>
+</body>
+</html>
