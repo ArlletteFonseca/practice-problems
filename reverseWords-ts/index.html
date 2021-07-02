@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function reverseWords(s: string): string {
+        let wordArray = s.split(" ");
+        //wordArray becomes an array ["Let's", "take", "LeetCode", "contest"]
+
+        //loop through the array using map/ map returns an array
+        let reverseWord: any = wordArray.map(elem => {
+          //each elem is a word from the array so lets, take, leetcode ...
+          //since elem is a string I want to reverse so make into an array using split
+          //split gives me each word in an array ["lets"] ["take"]
+          // reverse only works on an array ["s","","t", "e", "L"]
+          //join again --> s'teL
+          const res = elem.split("").reverse().join('')
+          return res;
+
+        })
+        console.log(reverseWord)
+        return reverseWord.join(' ');
+
+      };
+
+      reverseWords("Let's take LeetCode contest")
+  </script>
+</body>
+</html>
