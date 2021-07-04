@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /**
+   * @param {number[]} nums
+   * @param {number} target
+   * @return {number}
+   input: array
+   output: true-> index
+           false-> -4
+   array is ascending order
+   search for the target number in the array nums
+   algorithm must be o(log n)
+   nums array can be 1 digit or up to 10,000
+   nums[i] can be a negative number -10,000
+   target can be less than 10,000
+   */
+
+    var search = function (nums, target) {
+      //loop through array and use for each with num and index i
+      // have a variable index which equals -1 from the start
+      //if the num equals the target number then index variable becomes i
+      // if it doesn't equal inside the for each it will default to the return on line 40 which equals the initial index of -1
+      let index = -1
+
+
+      nums.forEach((num, i) => {
+        if (num === target) {
+          index = i
+        }
+      })
+
+      return index
+
+
+    };
+</script>
+</body>
+</html>
