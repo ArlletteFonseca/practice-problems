@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * @param {number} left
+   * @param {number} right
+   * @return {number[]}
+   128 is the number
+   128 % 1 = 0, 128 % 2 =0, 128 % 8 = 0
+
+   self dividing number cannot contain 0
+   input is two integers
+   output is a list array of all the self dividing nubmer in the range
+   Example:
+   47, 48, 49....85
+   47 % 4 !== 0, 47% 7 !==, 48% 4 !==0 and so does 48%8
+
+   returns 48,55....
+   constraints:
+   left can start with one and right can be 10, 0000
+   */
+      var selfDividingNumbers = function (left, right) {
+        /*
+        1. initialize array where the numbers that are self-dividing will be stored
+        2. loop through numbers creating them with i
+        3. make each i into a string
+        4. search to see if any i has the string 0
+        5. if it does not have 0 make self  variable = true
+        6. loop through the string variable which made i into a string
+        7. loop through string individually using j '4', '7'
+        8. if self is true and str(47) % j(4) === 0 then self is true
+        9. if it is not true self will be false and it will not push to new array.
+        10. self is true so then i the number, will push to new array
+        return new Arrray
+        */
+        const newArr = []
+        for (let i = left; i <= right; i++) {
+          const str = i.toString();
+          console.log(str)
+          if (str.search('0') === -1) {
+            let self = true
+            for (let j = 0; j < str.length; j++) {
+              console.log('j', str[j])
+              self = self && i % str[j] === 0;
+            }
+            if (self) {
+              newArr.push(i)
+            }
+          }
+
+        }
+
+        return newArr
+      };
+  </script>
+
+</body>
+</html>
