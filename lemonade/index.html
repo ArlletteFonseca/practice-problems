@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * @param {number[]} bills
+       * @return {boolean}
+       */
+      var lemonadeChange = function (bills) {
+        /*
+        each lemonade is $5
+        order one at a time
+        Each customer will only buy one lemonade
+        payment can be either $5, $10,$20 bill
+        provide the correct change to each customer so net is $5
+        no change in hand at first
+        return true if and only if you can provide every customer with correct change
+        input is an array of bills either 5, 10, 20
+        output is true
+        count: 5, ,20
+        10->
+        20_-:>
+       1. start with two variables fives and tens
+       2. loop through array
+       3. if bill is 5 dollars increase the count on fives
+       4. if bill is 10 increase the count on tens and decrease the count on fives
+       5. else if its not a ten and not a 5 which means its a 20 then check to see if theres tens
+       6. if there is a ten subtract a ten and a five otherwise if there is no ten subtract 3 fives to make the 15 change
+       7. now check your fives and your tens, if fives is less than 0 or tens is less than 0 return false
+
+        */
+
+        let fives = 0;
+        let tens = 0;
+
+        for (let i = 0; i <= bills.length - 1; i++) {
+          if (bills[i] === 5) {
+            fives++;
+          } else if (bills[i] === 10) {
+            tens++;
+            fives--;
+          } else {
+            if (tens > 0) {
+              tens--;
+              fives--;
+            } else {
+              fives = fives - 3;
+            }
+          }
+          if (fives < 0 || tens < 0) return false;
+        }
+
+        return true;
+      };
+    </script>
+  </body>
+</html>
