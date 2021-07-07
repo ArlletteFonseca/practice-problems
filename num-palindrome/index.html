@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * @param {number} x
+   * @return {boolean}
+   */
+      var isPalindrome = function (x) {
+        /*
+        A palindrome number is the same forwards as it is backwards
+        negative numbers will never be a palindrome since the negative ends up at the back
+
+        1. initialize a variable called reversed
+        2. reversed makes the number into a string and then splits it into an array, I then reverse the array because reverse only works on an array, I then join the array and get the string backwards of the number
+        3. I then compare if reversed variable is triple equals to the number give x but I need to make sure x is a string to compare since reversed is a string
+        4. if equal then return true
+        5. if not return false
+
+
+        */
+        let reversed = x.toString().split('').reverse().join('')
+        if (reversed === x.toString()) {
+          return true
+        } else {
+          return false
+        }
+
+      };
+  </script>
+</body>
+</html>
