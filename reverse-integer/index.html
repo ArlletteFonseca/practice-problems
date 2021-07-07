@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * @param {number} x
+   * @return {number}
+   input: a 32 bit integer
+   Output: integer reversed
+   output must be within range of -2^31 and 2^31 -1
+   if output of of range return a zero
+   1. intialize a variable called numArr to store the num array
+   2. numArr will turn num into a string then split the string into an array and reverse the array because split only works on arrays
+   3. intialize a variable calle arr which will join numArr and make it into a number integer
+   4. check to see if num given is less than 0
+      a. if less than 0 remove an item from the end of the array numArr save that item as the negative variable since it will be the negative sign
+      b.then unshift which is add that negative sign to the beginning of the array
+      c. change finalNum variable to equal numArr array joined to be an integer
+  5. else if the given number is not negative or less than 0 just make finalNum equal numArr.join(' ') so join the array to make the integer
+  6. finally check to see if finalNum is within 32 bit range
+      a. if final num is less than 2^31-1 and also greater than -2^31 then return the finalNum because its within
+      b. otherwise if it's out of bounds return zero 0
+   */
+      var reverse = function (num) {
+        const numArr = num.toString().split('').reverse();
+        let finalNum = 0;
+
+        if (num < 0) {
+          const negative = numArr.pop()
+          numArr.unshift(negative)
+          finalNum = numArr.join('')
+        } else {
+          finalNum = numArr.join('')
+        }
+
+        if (finalNum < 2147483647 && finalNum > -2147483648) {
+          return finalNum
+        } else {
+          return 0
+        }
+
+      };
+  </script>
+</body>
+</html>
