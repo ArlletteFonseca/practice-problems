@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * Definition for singly-linked list.
+   * function ListNode(val, next) {
+   *     this.val = (val===undefined ? 0 : val)
+   *     this.next = (next===undefined ? null : next)
+   * }
+   */
+      /**
+       * @param {ListNode} l1
+       * @param {ListNode} l2
+       * @return {ListNode}
+        input: two linked lists
+        digits stored in reverse order
+        each node contains single digit
+        add two numbers and return the sum as a linked list
+
+       */
+      var addTwoNumbers = function (l1, l2) {
+        //create a dummy node that starts with 0 beginning of list
+        let dummyHead = new ListNode(0);
+        //create two pointers p1 keeps track of  l1 list and p2 keeps track of l2 list
+        let p1 = l1;
+        let p2 = l2;
+        //current variable keeps track of where we are on the list
+        let current = dummyHead;
+        // carry variable keeps track of any remaining carry numbers from addition
+        let carry = 0
+        // so while each linked list has an extra node keep going
+        while (p1 !== null || p2 !== null) {
+          //if p1 and p2 dont equal null(because its on a node) let value of x == p1.val otherwise if its null make it equal to zero
+          let x = (p1 !== null) ? p1.val : 0;
+          let y = (p2 !== null) ? p2.val : 0;
+          // sum x and y and the carry variable
+          let sum = x + y + carry;
+          // calculate carry for next node, round down using Math.floor, its sum divided by 10
+          carry = Math.floor(sum / 10);
+          //add a new linked node using sum modulo 10
+          current.next = new ListNode(sum % 10)
+          //reassign current for the next loops
+          current = current.next;
+          //move our pointers
+          if (p1 !== null) {
+            p1 = p1.next;
+          }
+          if (p2 !== null) {
+            p2 = p2.next;
+
+          }
+        }
+        //once you break out of the while loop becauase p1 or p2 are on null, you need to check for carry, if its greater than 0 add a 1 to the front of the linked list
+        if (carry > 0) {
+          current.next = new ListNode(1);
+        }
+        return dummyHead.next
+      };
+  </script>
+</body>
+</html>
