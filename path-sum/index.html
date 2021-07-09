@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * Definition for a binary tree node.
+   * function TreeNode(val, left, right) {
+   *     this.val = (val===undefined ? 0 : val)
+   *     this.left = (left===undefined ? null : left)
+   *     this.right = (right===undefined ? null : right)
+   * }
+   */
+      /**
+       * @param {TreeNode} root
+       * @param {number} targetSum
+       * @return {boolean}
+          root is what node we are on
+          targetSum is the sum we need to get to
+          input: array and a targetSum
+          output: boolean
+          check to top node and move down to child node to see if they subtract to zero for the targetSum
+       */
+      var hasPathSum = function (root, targetSum) {
+
+        //does the node we are on equal null? return false if so
+        if (root === null) {
+          return false;
+        }
+        // if the targetSum is equal to the root we are on and node needs to have no children so needs to equal null to the left and the right
+        if (targetSum === root.val && root.left === null && root.right === null) {
+
+          return true
+        }
+        //if the above is not satisfied use recursion
+        //use recursion because we haven't gotten to final child node pass in the left side instead subtract the value I am on from the sum if I am done with left side move to right
+        //do the same for the right
+        //
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val)
+
+
+
+      };
+  </script>
+</body>
+</html>
