@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * @param {number} n
+   * @param {number[][]} trust
+   * @return {number}
+   input: array of pairs and a number for the number of people in the town
+   output: label(number) of who is the town judge or -1 if the town does not have judge
+
+   */
+      var findJudge = function (n, trust) {
+        //create array that keeps track of trust count
+        let trustCounts = new Array(n + 1).fill(0)
+        // loop through given array and increment/decrement trustCounts index based on who trusts who
+        for (let [i, j] of trust) {
+          trustCounts[i] -= 1
+          trustCounts[j] += 1
+        }
+        console.log(trustCounts)
+        //loop through trust counts array to see who has the highest number - 1 because the judge trusts no one it it n - 1 return index of that person. Using an array with index numbers to keep track of the town is a good way to approach this problem
+        for (let i = 1; i < trustCounts.length; i++) {
+          if (trustCounts[i] == n - 1) {
+            return i
+          }
+        }
+        // if town has no judge return -1
+        return -1;
+      };
+  </script>
+</body>
+</html>
