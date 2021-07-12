@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+   * Definition for singly-linked list.
+   * function ListNode(val, next) {
+   *     this.val = (val===undefined ? 0 : val)
+   *     this.next = (next===undefined ? null : next)
+   * }
+   */
+      /**
+       * @param {ListNode} l1
+       * @param {ListNode} l2
+       * @return {ListNode}
+          Merge two sorted linked lists
+          should be made by splicing together the nodes of the first two lists
+          input: two lists, l1, l2
+          output: a sorted list
+       */
+      var mergeTwoLists = function (l1, l2) {
+
+        //create a new node using Class listNode below and initiate to -1
+        let dummy = new ListNode(-1);
+        //create new variable called head and make that equal to dummy head will keep changing
+        let head = dummy;
+
+        //create loop if l1 is not null and l2 is not null do the following
+        while (l1 !== null && l2 !== null) {
+          //if value of l1 (1) is less than or equal to value of l1(1) point next node of dummy to l1 value and l1 = l1.next
+          if (l1.val <= l2.val) {
+
+            dummy.next = l1;
+            l1 = l1.next;
+          } else {
+            dummy.next = l2;
+            l2 = l2.next
+          }
+          dummy = dummy.next;
+
+        }
+        //if the first linked list is not the one with the null reference then dummy.next equal l1 otherwise if first linked list has  null, connect first linked list to second linked lis
+        if (l1 !== null) {
+          dummy.next = l1;
+        } else {
+          dummy.next = l2
+        }
+        // return head.next which would remove the -1 we created and moves the reference to the number 1
+        return head.next;
+      };
+
+      // create a class called ListNode because JavaScript does not have native linked lists
+      class ListNode {
+        constructor(val = null, next = null) {
+          this.val = val
+          this.next = next
+        }
+      }
+  </script>
+</body>
+</html>
