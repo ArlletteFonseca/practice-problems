@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    input: grid: an array of arrays
+    output: digit of the number of islands present
+    An island is surrounded 0 and inside are ones
+
+    */
+     let numIslands = function(grid) {
+        //Check to see if grid is null or grid.length is zero if so return 0
+        if (grid === null || grid.length === 0) {
+          return 0;
+        }
+        //initiate an island count
+        let numberOfIslands = 0;
+        //i is the array
+        //loop through the arrays with i and loop through each element in the array with j
+        for (let i = 0; i <= grid.length-1; i++) {
+          //j is the elements in the array
+          for (let j = 0; j <= grid[i].length -1; j++) {
+            //we want to check for the string  1
+            if (grid[i][j] === "1") {
+              //call a method that increments number of islands
+              numberOfIslands += getIslandCount(grid, i, j);
+            }
+          }
+        }
+        return numberOfIslands;
+      }
+
+      //method
+      let getIslandCount = function (grid, i, j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid.length || grid[i][j] === '0') {
+          return 0;
+        }
+        //change the element we are on to a zero
+
+        grid[i][j] = '0'
+
+        getIslandCount(grid, i + 1, j);
+        getIslandCount(grid, i - 1, j)
+        getIslandCount(grid, i, j + 1);
+        getIslandCount(grid, i, j - 1);
+        return 1;
+      }
+
+  </script>
+</body>
+</html>
