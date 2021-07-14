@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    input: two arrays
+    output: digit
+    1. sort the two arrays by start time and endtime
+    2.loop through arrays using two pointers, i and j
+    3 i will keep track of start time
+    4. j will keep track of endtime
+    5. if i is less than j meeting is starting so meeting++/ increment
+    6. if i is greater than j then meeting has started so meeting --/decrement
+    7. make variable meeting to keep track of meeting rooms
+    */
+
+    const minMeetingRooms = function (intervals) {
+    const length = intervals.length;
+    let start = [];
+    let end = []
+    for (let i = 0; i < length; i++) {
+      const interval = intervals[i]
+      //below is also known as intervals[i][0] being the first element
+      //intervals[i][1] being the second element
+
+      start.push(interval[0])
+      end.push(interval[1])
+    }
+    // sort in ascending order
+    start.sort((a,b)=> a-b)
+    end.sort((a,b)=> a-b)
+    // create variable below to keep track of counts
+    let i =0; //corresponds to start time elements
+    let j = 0;//corresponds to end time elements
+    let res = 0; // result
+    let meetingRooms = 0; //number of meeting rooms counter
+      //while is less than length of arrays
+    while (i < length) {
+      // if start is less than end time
+      if (start[i] < end[j]) {
+        //increase meetingRooms by 1 increase i to move to next index counter
+        meetingRooms++;
+        i++
+      } else {
+        //otherwise if end time is greater than start time decrease meetingRooms and increase J to move to the next index in end time
+        meetingRooms--
+        j++
+      }
+      console.log(meetingRooms)
+      console.log('res', res)
+      res = Math.max(0, meetingRooms)
+    }
+
+
+    }
+    minMeetingRooms([[0,30], [5,10], [15,20]])
+  </script>
+</body>
+</html>
